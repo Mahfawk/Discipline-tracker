@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discipline</title>
+<style>
+    .main_affichage{
+        display:flex;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+    #discipline{
+        height: 90vh;
+        width: 35vw;
+        background-color: rgb(95, 12, 12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 20px;
+    }
+    #effort{
+        background-color: rgb(4, 4, 107);
+        height: 90vh;
+        width: 60vw;
+    }
+    #exporter{
+        font-size: 20px;
+        margin-top: auto;
+        margin-bottom: 10px;
+        width: 80%;
+        padding: 20px;
+        color:white;
+        background-color: green;
+        border-radius: 50px;
+    }
+    #add_activity{
+        padding: 10px;
+        margin: 10px;
+        font-size: 15px;
+        color:white;
+        border-radius: 20px;
+        background-color: rgb(0,0,0,0.5);
+    }
+    #add_activity:active{
+        color:rgb(255,255,255,0.6);
+        background-color: rgb(0,0,0,0.3);
+    }
+</style>
+</head>
+<body>
+    <div class="main_affichage">
+        <div class="box" id="discipline">
+            <h1>Discipline</h1>
+            <div class="activity_list">
+                <!-- <div class="activity">
+                    <input type="checkbox">
+                    <input type="text" placeholder="Entrer une activité" style="font-size: 30px;">
+                </div> -->
+            </div>
+            <button id="add_activity" onclick="ajout_activite();">Ajouter une activité</button> 
+            <input type="submit" value="SUBMIT" onclick="maka_donnee();" id="exporter">
+        </div>
+        <div class="box" id="effort">
+            <h1>Effort</h1>
+        </div>
+    </div>
+    <script>
+        let historique=[];
+        let jour =0;
+        function maka_donnee(){
+            const datyandroany= new Date().toLocaleDateString("fr-FR");
+            let verifcheckes= document.querySelectorAll('input[type="checkbox"]:checked');
+            let isachecked = verifcheckes.length;
+            let journee={"date":datyandroany,"point":isachecked,"jour":++jour};
+            historique.push(journee);
+            console.log(historique);
+        }
+        function ajout_activite(){
+            let list_act= document.querySelector(".activity_list");
+            let new_act=document.createElement("div");
+            new_act.setAttribute("id","activity")
+            let checke = document.createElement("input");
+            checke.setAttribute("type","checkbox");
+            let texte = document.createElement("input");
+            texte.setAttribute("type","text");
+            texte.setAttribute("placeholder","Entrer une activité");
+            texte.setAttribute("style","font-size:30px");
+            new_act.appendChild(checke); 
+            new_act.appendChild(texte);
+            list_act.appendChild(new_act);
+        }
+    </script>
+</body>
+</html>
