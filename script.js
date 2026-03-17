@@ -23,6 +23,7 @@ function ajout_activite(){
     checke.setAttribute("type","checkbox");
     let texte = document.createElement("input");
     texte.setAttribute("type","text");
+    texte.setAttribute("id","box");
     texte.setAttribute("placeholder","Entrer une activité");
     texte.setAttribute("style","font-size:30px");
     new_act.appendChild(checke); //mise en place de checke

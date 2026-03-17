@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discipline</title>
     <link rel="stylesheet" href="style.css">
@@ -10,13 +13,13 @@
     <div class="main_affichage">
         <div class="box" id="discipline">
             <h1>Discipline</h1>
+            <button id="add_activity" onclick="ajout_activite();">Ajouter une activité</button> 
             <div class="activity_list">
                 <!-- <div class="activity">
                     <input type="checkbox">
                     <input type="text" placeholder="Entrer une activité" style="font-size: 30px;">
                 </div> -->
             </div>
-            <button id="add_activity" onclick="ajout_activite();">Ajouter une activité</button> 
             <input type="submit" value="SUBMIT" onclick="maka_donnee();" id="exporter">
         </div>
         <div class="box" id="effort">
